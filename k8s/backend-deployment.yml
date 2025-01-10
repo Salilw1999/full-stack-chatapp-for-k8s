@@ -10,14 +10,12 @@ spec:
       app: backend
   template:
     metadata:
-      name: backend-pod
-      namespace: chat-app
-      labels: 
+      labels:
         app: backend
     spec:
       containers:
       - name: chatapp-backend
-        image: trainwithshubham/chatapp-backend:latest
+        image: salilwadke/chatapp-backend:latest
         ports:
         - containerPort: 5001
         env:
@@ -29,6 +27,6 @@ spec:
           valueFrom:
             secretKeyRef:
               name: chatapp-secrets
-              key: jwt 
+              key: jwt
         - name: PORT
           value: "5001"

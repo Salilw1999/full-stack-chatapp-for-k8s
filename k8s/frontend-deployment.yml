@@ -12,18 +12,17 @@ spec:
     metadata:
       name: frontend-pod
       namespace: chat-app
-      labels: 
+      labels:
         app: frontend
     spec:
       containers:
       - name: chatapp-frontend
-        image: trainwithshubham/chatapp-frontend
+        image: salilwadke/chatapp-frontend
         ports:
         - containerPort: 80
         env:
         - name: NODE_ENV
           value: production
-          
 
 
 

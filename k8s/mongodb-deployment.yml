@@ -10,9 +10,7 @@ spec:
       app: mongodb
   template:
     metadata:
-      name: mongodb-pod
-      namespace: chat-app
-      labels: 
+      labels:
         app: mongodb
     spec:
       containers:
@@ -25,10 +23,10 @@ spec:
           value: mongoadmin
         - name: MONGO_INITDB_ROOT_PASSWORD
           value: secret
+        volumeMounts:
+        - name: mongo-data
+          mountPath: /data/db
       volumes:
       - name: mongo-data
         persistentVolumeClaim:
-          claimName: mongodb-pvc   
-
-
-
+          claimName: mongodb-pvc
