@@ -156,6 +156,11 @@ Open the application in your browser:
 ```
 http://<ec2-ip>:8080
 ```
+### Step 16: For running multiple services at a time (nginx and chat-app_
+for ingrass applying :
+```
+kubectl apply -f ingrass.yml
+```
 
 ---
 
